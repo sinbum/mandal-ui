@@ -1,6 +1,6 @@
-import App from './App.svelte';
+import MyApp from './MyApp.svelte';
 
-const app = new App({
+const myApp = new MyApp({
 	target: document.body,
 	props: {
 		name: 'world',
@@ -9,6 +9,4 @@ const app = new App({
 	}
 });
 
-
-export default app;
-
+export default myApp;
