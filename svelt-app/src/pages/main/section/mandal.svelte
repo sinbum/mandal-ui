@@ -13,7 +13,7 @@ import { storeName } from "../../../store.js"
 		}		
 	};
 
-	let foods = ['apple','banana','orange','pear','peach','coconut','tomato','strawberry','rasberry',];	
+	let datas = ['apple','banana','orange','pear','peach','coconut','tomato','strawberry','rasberry',];	
 
 	const makeArray = (mandalList) =>{
 		const result = [];
@@ -26,8 +26,11 @@ import { storeName } from "../../../store.js"
 		}
 		return result;
 	}
+
+
+
 	
-	const arry = makeArray(foods);
+	const mandalList = makeArray(datas);
 
 </script>
 
@@ -37,19 +40,14 @@ import { storeName } from "../../../store.js"
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-
-
 <div class = "mainWrap">
 
-<h1>Hello SINBUM {$storeName}!</h1>
+<h1>Hello SINBUM {$storeName}</h1>
 
-<p>{color} jean</p>
-<button on:click={handleClick({color})}>update jean color</button>
-
-<div class="mand">
+<div class="mandals">
     
-    {#each arry as food (food)}
-        <button class="v2_24">{food}</button>			
+    {#each mandalList as box,idx (box)}
+		<button class="mandal" >{box}</button>			
     {/each}
     
 </div>
@@ -69,7 +67,7 @@ import { storeName } from "../../../store.js"
 	.mainWrap {
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
+		max-width: 100%;
 		margin: 0 auto;
 	}
 
@@ -80,30 +78,27 @@ import { storeName } from "../../../store.js"
 		font-weight: 100;
 	}
 
-	.v4_35 {
+	.mandals {
 		width: 100%;
-		height: 640px;
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
 		padding: 10px 10px;
 		margin: 10px;
 		opacity: 1;
-		position: relative;  
-		top: 0px;
-		left: 0px;
-		overflow: hidden;
+		position: relative;  	
+		overflow: hidden;				
 	}
 		
-	.v2_24 {
-		width: 200px;
-		height: 200px;
-		background: rgba(129,213,148,0.8299999833106995);
-		opacity: 1;
-		display: inline-block;
-		top: 10px;
-		left: 10px;
-		margin: 5px;
+	.mandal {
+		position: relative;
+		float: left;
+		width: 30%;	
+		padding-bottom: 25%;
+		/* height: 30%; */
+		background: rgba(129,213,148,0.8299999833106995);		
+		font-size: larger;
+		/* margin: 5px; */
 	}
 
 </style>

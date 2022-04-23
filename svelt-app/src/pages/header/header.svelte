@@ -1,1 +1,1 @@
-<h1>History</h1>
+<h1 style="text-align: center;">History</h1>

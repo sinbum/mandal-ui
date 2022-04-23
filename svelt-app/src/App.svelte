@@ -6,11 +6,9 @@
 	import Login from "./pages/login/login.svelte";
 
 	
-	let name = 'world'
-
 	import { storeName } from './store.js'	
-
-	$storeName = name;
+	
+	$storeName = 'WORLD!!';
 
 	
 </script>
@@ -20,8 +18,7 @@
 		<Header />
 	</header>
 
-	<nav>
-		
+	<nav>		
 		<Nav />
 	</nav>
 
