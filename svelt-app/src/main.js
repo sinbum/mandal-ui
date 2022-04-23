@@ -5,7 +5,6 @@ const app = new App({
 	props: {
 		name: 'world',
 		color: 'black',
-		buttonClick : ()=>{alert('hello')}
 	}
 });
 
