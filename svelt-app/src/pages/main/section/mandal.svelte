@@ -1,8 +1,6 @@
 <script>
 
-import {} from "svelte/store"
-
-	export let name;
+import { storeName } from "../../../store.js"
 
 
 	export let color = 'black';
@@ -43,7 +41,7 @@ import {} from "svelte/store"
 
 <div class = "mainWrap">
 
-<h1>Hello SINBUM {name}!</h1>
+<h1>Hello SINBUM {$storeName}!</h1>
 
 <p>{color} jean</p>
 <button on:click={handleClick({color})}>update jean color</button>

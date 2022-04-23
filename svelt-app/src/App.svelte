@@ -2,8 +2,17 @@
 	import { Router, Link, Route } from "svelte-navigator";
 	import Header from "./pages/header/header.svelte";
 	import Nav from "./pages/nav/nav.svelte";
-	import MyApp from "./pages/main/section/MyApp.svelte";
+	import Mandal from "./pages/main/section/mandal.svelte";
 	import Login from "./pages/login/login.svelte";
+
+	
+	let name = 'world'
+
+	import { storeName } from './store.js'	
+
+	$storeName = name;
+
+	
 </script>
 
 <Router>
@@ -18,7 +27,7 @@
 
 	<main>
 		<Route path="/">
-			<MyApp />
+			<Mandal />
 		</Route>
 
 		<Route path="login">
