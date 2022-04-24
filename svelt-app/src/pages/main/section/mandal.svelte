@@ -1,6 +1,7 @@
 <script>
-
+import getResponseSample from "../../../sampleDatas.js";
 import { storeName } from "../../../store.js"
+
 
 
 	export let color = 'black';
@@ -10,8 +11,13 @@ import { storeName } from "../../../store.js"
 			color = 'blue';
 		}else{
 			color = 'black';
-		}		
+		}
 	};
+
+	
+
+
+	
 
 	let datas = ['apple','banana','orange','pear','peach','coconut','tomato','strawberry','rasberry',];	
 
@@ -27,7 +33,9 @@ import { storeName } from "../../../store.js"
 		return result;
 	}
 
-
+console.log('아아아');
+	console.log(JSON.parse(getResponseSample()));
+	
 
 	
 	const mandalList = makeArray(datas);

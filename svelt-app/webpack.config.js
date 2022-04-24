@@ -59,6 +59,8 @@ module.exports = {
 	],
 	devtool: prod ? false : 'source-map',
 	devServer: {
-		hot: true
+		hot: true,
+		disableHostCheck:true,
+		host:"192.168.219.101"
 	}
 };
