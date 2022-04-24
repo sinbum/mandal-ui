@@ -44,7 +44,7 @@ let datas = {... datasTemplate};
 
 let list = [];
 for (let i = 0; i < 8; i++) {    
-    let  childNode = {... childNodeTemplate};
+    let childNode = {... childNodeTemplate};
     
     childNode.idxLocation = childNode.depth + ','+i
     childNode.topic = i
@@ -55,16 +55,16 @@ for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
         grandChildNode.idxLocation = grandChildNode.depth + ','+(i+1)+'-'+(j+1);
         grandChildNode.topic = (i+1)+'-'+(j+1)
-        
         subList.push(grandChildNode);
+      childNode.childNodes.push(grandChildNode);
     }
     
-    childNode.childNodes.push(subList);
+    childNode.childNodes= [... subList];
     list.push(childNode);
 
 }
 
-datas.childNodes = [... list];
+datas.childNodes = {... list};
 
 return JSON.stringify(datas);
 
