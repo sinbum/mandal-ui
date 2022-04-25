@@ -14,15 +14,17 @@
 </script>
 
 <Router>
-	<header>
-		<Header />
-	</header>
+	
+		<header>
+			<Header />
+		</header>
 
 	<nav>		
 		<Nav />
 	</nav>
 
 	<main>
+
 		<Route path="/">
 			<Mandal />
 		</Route>
@@ -41,6 +43,8 @@
 		<button on:click={handleLogout}>Logout</button>
 	  </PrivateRoute> -->
 	</main>
+
+
 </Router>
 
 <style>
