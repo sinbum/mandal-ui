@@ -1,16 +1,16 @@
 <div class="header">
-    <h1 class="title">History</h1>
+    <h1 class="title">Mandal</h1>
 </div>
 
 <style>
     .header {
-      background-color: darkslategrey;
-      padding: 8px;
-      width: 100%;
+        background-color: darkslategrey;
+        padding: 8px;
+        width: 100%;
     }
-  
+
     .header > .title {
-      text-align: center;
-      color: white;
+        text-align: center;
+        color: white;
     }
-  </style>
+</style>
