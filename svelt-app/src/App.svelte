@@ -1,40 +1,35 @@
 <script>
-import {
-    Router,
-    Link,
-    Route
-} from "svelte-navigator";
-import Header from "./pages/header/header.svelte";
-import Nav from "./pages/nav/nav.svelte";
-import Mandal from "./pages/main/section/mandal.svelte";
-import Login from "./pages/login/login.svelte";
+    import {Router, Route} from "svelte-navigator";
+    import {storeName} from './store.js';
 
-import {
-    storeName
-} from './store.js'
+    import Header from "@modules/header/header.svelte";
+    import Nav from "@modules/nav/nav.svelte";
+    import Mandal from "@section/mandal.svelte";
+    import Login from "@modules/login/login.svelte";
+    
+    $storeName = 'WORLD!!';
 
-$storeName = 'WORLD!!';
 </script>
 
 <Router>
 
     <header>
-        <Header />
+        <Header/>
     </header>
 
     <div class="container">
         <nav>
-            <Nav />
+            <Nav/>
         </nav>
 
         <main>
 
             <Route path="/">
-                <Mandal />
+                <Mandal/>
             </Route>
 
             <Route path="login">
-                <Login />
+                <Login/>
             </Route>
 
             <!-- <Route path="about">
