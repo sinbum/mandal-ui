@@ -16,12 +16,8 @@
 -----------------------------
 22/04/27
 
-##### 스벨트 절대경로 설정 방법
+##### 스벨트 절대경로 설정 방법 [참조링크](https://kyounghwan01.github.io/blog/Svelte/alias/#rollup-plugin-alias-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5)
 
-[참조링크](https://kyounghwan01.github.io/blog/Svelte/alias/#rollup-plugin-alias-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5)
-
------------------------------
-22/04/27
 
 ##### webpack에 대한 지식이 부족하다. 웹팩을 공부해야할것같다.
 
