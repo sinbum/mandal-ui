@@ -2,27 +2,48 @@
     import {storeName} from "../../../store.js";
 
     //sampleData()라고 사용 / 부모파일이 변수명으로 저장한 경우. 함수호출시.
-    import {sampleData, makeMandalList} from './mandal';
+    import {SampleData, makeMandalList} from './mandal';
 
-    const bind = makeMandalList(sampleData());
-    const mandalList = [...bind];
+    function getChildList(idx, dataObj) {
+        let list;
+
+        if (!dataObj) {
+            alert('getChildList 가져오는중 오류발생');
+            return
+        }
+
+        list = dataObj.childNodes[idx].childNodes;
+
+        return list;
+
+    }
+
+    const sampleData = SampleData();
+    //const bind = sampleData();
+    console.log(SampleData())
 
 </script>
 
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <div class="container">
-    <div class="h1 text-secondary">My mandal >> {$storeName}</div>
+    <div class="grid_big">
 
-    <div class="row">
-        {#each mandalList as box,idx (box)}
-            <!-- <button class="col-4">{box}</button>	 -->
-            <div class="col-4">
-                <!-- <button type="button" class="btn btn-primary btn-square-md">{box}</button>		 -->
-                <button type="button" class="btn btn-light btn-sq-responsive"
-                        value={box.idxLocation}>{box.topic}</button>
+        {#each SampleData().childNodes as node,idx (idx)}
+            <!--    한묶음    -->
+            <div class="grid_big_cell">
+                <div class="grid_small">
+                    {#if getChildList(idx, sampleData)}
+                        {#each getChildList(idx, sampleData) as node,idx (node)}
+                            <div class="grid_small_cell">{node.topic}</div>
+                        {/each}
+                    {/if}
+                </div>
             </div>
+            <!--    /한묶음끝    -->
+
         {/each}
+
     </div>
 
 </div>
@@ -30,6 +51,48 @@
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <style>
+    .container {
+        /*grid-template-columns: 130px 130px 130px;*/
+        /*grid-template-rows: 130px 130px 130px;*/
+        width: 100%;
+
+    }
+
+    .grid_small {
+        border: 1px solid green;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+
+    }
+
+    [class*=grid_small_cell] {
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 2px;
+        padding: 20px;
+
+        position: relative;
+    }
+
+    .grid_big {
+        border: 1px solid green;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+
+    }
+
+    [class*=grid_big_cell] {
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 2px;
+        padding: 20px;
+
+        position: relative;
+    }
 
     /* Style for Extra Large Screen */
     @media (max-width: 3920px) {

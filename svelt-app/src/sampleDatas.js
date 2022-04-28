@@ -37,36 +37,13 @@ const responseSample = () => {
         topic: ''
     };
 
-//주요토픽생성
-    let datas = {...datasTemplate};
-
-
-    let list = [];
-    for (let i = 0; i < 9; i++) {
-        let childNode = {...childNodeTemplate};
-
-        childNode.idxLocation = childNode.depth + ',' + i
-        childNode.topic = i
-
-        if (i === 4) {
-            list.push({
-                parentNode: 'root',
-                currentNode: 'child',
-                depth: 1,
-                dateCreated: '20220424',
-                dataLastEdited: '20220424',
-                idxLocation: childNode.idxLocation = childNode.depth + ',' + i,
-                topic: i,
-            })
-            continue
-        }
-
-        let subList = [];
-        let grandChildNode = {...grandChildNodeTemplate}
+    function makeChildNode(subList, i) {
         for (let j = 0; j < 9; j++) {
+            let grandChildNode = {...grandChildNodeTemplate}
 
-            if (i === 4) {
+            if (j === 4) {
                 subList.push({
+
                     parentNode: 'child',
                     currentNode: 'grandChild',
                     depth: 2,
@@ -81,8 +58,42 @@ const responseSample = () => {
             grandChildNode.idxLocation = grandChildNode.depth + ',' + (i + 1) + '-' + (j + 1);
             grandChildNode.topic = (i + 1) + '-' + (j + 1)
             subList.push(grandChildNode);
-            childNode.childNodes.push(grandChildNode);
         }
+        return subList
+    }
+
+//주요토픽생성
+    let datas = {...datasTemplate};
+
+    let list = [];
+    for (let i = 0; i < 9; i++) {
+        let childNode = {...childNodeTemplate};
+        let subList = []
+
+        childNode.idxLocation = childNode.depth + ',' + i
+        childNode.postion = i;
+        childNode.topic = i;
+
+        if (i === 4) {
+            subList = makeChildNode(subList, i);
+
+
+            list.push({
+                parentNode: 'root',
+                currentNode: 'child',
+                depth: 1,
+                dateCreated: '20220424',
+                dataLastEdited: '20220424',
+                idxLocation: childNode.depth + ',' + i,
+                childNodes: [...subList],
+                topic: i,
+            })
+            continue
+
+        }
+
+        subList = [];
+        subList = makeChildNode(subList, i)
 
         childNode.childNodes = [...subList];
         list.push(childNode);

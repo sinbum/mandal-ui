@@ -1,11 +1,11 @@
 import getResponseSample from "../../../sampleDatas.js";
 
 
-export const sampleData = () => {
+export const SampleData = () => {
     return JSON.parse(getResponseSample());
 };
 
-export const makeMandalList = (obj) => {
+export const MakeMandalList = (obj) => {
     let list = [];
     console.log('obj', obj)
     console.log('childNodes', obj.childNodes.length)

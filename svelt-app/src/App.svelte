@@ -4,9 +4,10 @@
 
     import Header from "@modules/header/header.svelte";
     import Nav from "@modules/nav/nav.svelte";
-    import Mandal from "@section/mandal.svelte";
+    import Mandal from "@section/mandal2.svelte";
+    import Mandal2 from "@section/mandal2.svelte";
     import Login from "@modules/login/login.svelte";
-    
+
     $storeName = 'WORLD!!';
 
 </script>
@@ -23,9 +24,11 @@
         </nav>
 
         <main>
-
+            <div style="height: 30px"></div>
             <Route path="/">
-                <Mandal/>
+                <!--  <Mandal/>-->
+
+                <Mandal2/>
             </Route>
 
             <Route path="login">
